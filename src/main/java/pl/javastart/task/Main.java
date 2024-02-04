@@ -10,7 +10,7 @@ public class Main {
         Services.showRoomInfo(room);
         Services.lowerTemperature(room);
         Services.lowerTemperature(room);
-        room = new Room(20.5, 21.7, 19.5, true);
+        room = new Room(20.5, 21.5, 19.5, true);
         Services.showRoomInfo(room);
         Services.lowerTemperature(room);
         Services.lowerTemperature(room);

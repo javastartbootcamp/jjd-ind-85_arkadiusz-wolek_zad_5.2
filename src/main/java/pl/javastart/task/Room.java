@@ -4,7 +4,7 @@ public class Room {
     private double area;
     private double currentTemperature;
     private double minimumTemperature;
-    boolean airConditioning;
+    private boolean airConditioning;
 
     public Room(double area, double currentTemperature) {
         this.area = area;
@@ -48,16 +48,14 @@ public class Room {
     }
 
     public boolean lowerTemperature() {
-        boolean lowerTemperatureSuccessful = false;
-        if (!airConditioning) {
-            return lowerTemperatureSuccessful;
+        if (!airConditioning || currentTemperature == minimumTemperature) {
+            return false;
         }
         if (currentTemperature - 1.0 >= minimumTemperature) {
             currentTemperature -= 1.0;
-            lowerTemperatureSuccessful = true;
         } else {
             currentTemperature = minimumTemperature;
         }
-        return lowerTemperatureSuccessful;
+        return true;
     }
 }
